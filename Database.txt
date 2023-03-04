@@ -1,0 +1,268 @@
+-- phpMyAdmin SQL Dump
+-- version 4.4.10
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost:8889
+-- Generation Time: Dec 09, 2016 at 06:12 PM
+-- Server version: 5.5.42
+-- PHP Version: 7.0.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `Restaurants`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Food`
+--
+
+CREATE TABLE `Food` (
+  `F_id` int(11) NOT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Categorie` varchar(255) DEFAULT NULL,
+  `Price` int(11) DEFAULT NULL,
+  `R_Id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Food`
+--
+
+INSERT INTO `Food` (`F_id`, `Name`, `Categorie`, `Price`, `R_Id`) VALUES
+(1, 'HUMMUS AND CRACKERS', 'teasers', 6000, 1),
+(2, 'CHEESE GARLIC BREAD', 'teasers', 5000, 1),
+(3, 'GOLDEN WEDGES', 'teasers', 7500, 1),
+(4, 'HALLOUMI STICKS', 'teasers', 8000, 1),
+(5, 'FRIES AND CHEESE', 'teasers', 10500, 1),
+(6, 'FRIES', 'teasers', 6500, 1),
+(7, 'CHICKEN MARINARA', 'Platters', 14500, 1),
+(8, 'POTATO CHICKEN', 'Platters', 14500, 1),
+(9, 'SUPER SAMPLER', 'starters', 24750, 2),
+(10, 'LOADED FRIES', 'starters', 15750, 2),
+(11, 'BLOOMING SHRIMP', 'starters', 14250, 2),
+(12, 'FRIED EGG', 'Organic Eggs', 9500, 3),
+(13, 'EGG AND CHEESE', 'Organic Eggs', 12000, 3),
+(14, 'EGGs AND BRIE', 'Organic Eggs', 15000, 3),
+(15, 'BAKED QUINOA CHIPS', 'STARTERS', 11000, 3),
+(16, 'URBA ROLL', 'STARTERS', 18000, 3),
+(17, 'ALL QUINOA SALAD', 'Salads', 19000, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Ingredients`
+--
+
+CREATE TABLE `Ingredients` (
+  `ing` varchar(255) DEFAULT NULL,
+  `F_Id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Ingredients`
+--
+
+INSERT INTO `Ingredients` (`ing`, `F_Id`) VALUES
+('Mashed Chickpeas', 1),
+('Tahini Sauce', 1),
+('Grilled Vegetables', 1),
+('Toasted Multicereal Crackers', 1),
+('Garlic Spread', 2),
+('Herbs', 2),
+('White Dough', 2),
+('Melted Four Cheese', 2),
+('Fried Potato Wedges', 3),
+('Spizy Sauce', 3),
+('fried egg', 12),
+('cheddar cheese', 12),
+('hash brows', 12),
+('Organic Eggs', 13),
+('Cheese Mix', 12),
+('Cherry Tomato', 12),
+('Fresh Thyme', 12),
+('Scrambled egg', 14),
+('brie', 14),
+('Sun-dried Tomatoes', 14),
+('Black Olives', 14),
+('Toasted Baguette', 14),
+('4 pieces', 4),
+('Cheese Sticks', 14),
+('Island Dip', 14),
+('Halloumi Cheese Sticks', 4),
+('Island Dip', 4),
+('Grilled Potatoes', 7),
+('Egg Plants', 7),
+('Marinara Sauce', 7),
+('Parmesan Cheese', 7);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Orders`
+--
+
+CREATE TABLE `Orders` (
+  `orderName` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Orders`
+--
+
+INSERT INTO `Orders` (`orderName`) VALUES
+('FRIES'),
+('FRIES'),
+('Zaatar w Zeit'),
+(''),
+('s'),
+(''),
+('sss'),
+(''),
+(''),
+('HUMMUS AND CRACKERS'),
+('CHEESE GARLIC BREAD'),
+('GOLDEN WEDGES'),
+('HALLOUMI STICKS'),
+('HUMMUS AND CRACKERS'),
+('GOLDEN WEDGES'),
+('CHICKEN MARINARA'),
+('FRIES AND CHEESE'),
+('GOLDEN WEDGES'),
+('FRIES AND CHEESE'),
+('GOLDEN WEDGES'),
+('FRIES'),
+('GOLDEN WEDGES'),
+('FRIES AND CHEESE'),
+('FRIES'),
+('FRIES AND CHEESE'),
+('FRIES'),
+('GOLDEN WEDGES'),
+('CHEESE GARLIC BREAD'),
+('FRIES'),
+('GOLDEN WEDGES'),
+('FRIES AND CHEESE'),
+('CHEESE GARLIC BREAD'),
+('GOLDEN WEDGES'),
+('FRIES AND CHEESE'),
+('FRIES'),
+('HUMMUS AND CRACKERS'),
+('CHEESE GARLIC BREAD'),
+('GOLDEN WEDGES'),
+('HUMMUS AND CRACKERS'),
+('CHEESE GARLIC BREAD'),
+('GOLDEN WEDGES'),
+('HUMMUS AND CRACKERS');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Restaurents`
+--
+
+CREATE TABLE `Restaurents` (
+  `R_Id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `distance` int(11) DEFAULT NULL,
+  `favorite` int(11) NOT NULL DEFAULT '0',
+  `image` longblob NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Restaurents`
+--
+
+INSERT INTO `Restaurents` (`R_Id`, `name`, `type`, `distance`, `favorite`, `image`) VALUES
+(1, 'ZaatarwZeit', 'Casual Dining', 200, 0, 0x687474703a2f2f6b6d732e7a6161746172777a6569742e6e65742f636f6e74656e742f75706c6f6164732f636f72706f72617465706167652f3136303631343130303831313735337e5a575a5f4d6574612e6a7067),
+(2, 'Roadster Dinner', 'Casual Dining', 100, 0, 0x68747470733a2f2f73746174656f666d696e6431332e66696c65732e776f726470726573732e636f6d2f323031312f30372f726f6164737465722d64696e65722d6c6f676f312e706e67),
+(3, 'Urbanista', 'Casual Dining', 80, 0, 0x68747470733a2f2f7062732e7477696d672e636f6d2f70726f66696c655f696d616765732f3632383933353234393331333933353336302f4b4f6479635868792e6a7067),
+(4, 'Paul', 'Cafe', 110, 0, 0x68747470733a2f2f72696e6e6f6f2e6e65742f662f434d532f4c697374696e67732f3232325f3533333630355f3432303835333332313331353436335f313139333937383534325f4e5f2d5f517538305f52543136303078313032342d5f4f53393630783936302d),
+(6, 'Tonino', 'Desserts', 110, 0, 0x68747470733a2f2f622e7a6d7463646e2e636f6d2f646174612f70696374757265732f362f31363530353130362f39353866313766623765353463323836343239663939653564353964393065332e6a7067),
+(8, 'Hardees', 'Fast Food', 150, 0, 0x68747470733a2f2f7777772e676f6f676c652e636f6d2f75726c3f73613d69267263743d6a26713d26657372633d7326736f757263653d696d616765732663643d267665643d306168554b45776a3471637148372d48514168584a5342514b48623232445159516a52774942772675726c3d68747470732533412532462532467777772e6665737469736974652e636f6d2532466c6f676f2532466275726765722d6b696e6725324626707369673d4146516a434e474e797858484c767336446d496c4f387973744c6e7261302d6c7277267573743d31343831313932373331303236353237266361643d726a74),
+(9, 'KFC', 'Fast Food', 100, 0, ''),
+(10, 'Paul', 'Cafe', 270, 0, 0x68747470733a2f2f7777772e676f6f676c652e636f6d2f75726c3f73613d69267263743d6a26713d26657372633d7326736f757263653d696d616765732663643d267665643d306168554b457769556971325668654c51416855433778514b48513253427749516a52774942772675726c3d6874747073253341253246253246747769747465722e636f6d2532467061756c5f6c6562616e6f6e26707369673d4146516a434e4657306a78744b33417843555a7a475f577637534532306f75634f51267573743d31343831313938363030353232323837),
+(13, 'Pizza Hut', 'Pizza', 210, 0, 0x68747470733a2f2f7777772e676f6f676c652e636f6d2f75726c3f73613d69267263743d6a26713d26657372633d7326736f757263653d696d616765732663643d267665643d306168554b4577696d2d75713368754c51416858467652514b48583673437141516a52774942772675726c3d687474702533412532462532466c6f676f732e77696b69612e636f6d25324677696b6925324650697a7a615f4875742662766d3d62762e3134303439363437312c642e64323426707369673d4146516a434e473453586f36647a70746d574a454e584a67736d7954313661546741267573743d31343831313939303037303937303134266361643d726a74);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Users`
+--
+
+CREATE TABLE `Users` (
+  `U_Id` int(11) NOT NULL,
+  `FirstName` varchar(255) NOT NULL,
+  `LastName` varchar(255) NOT NULL,
+  `Email` varchar(255) DEFAULT NULL,
+  `PASS` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Users`
+--
+
+INSERT INTO `Users` (`U_Id`, `FirstName`, `LastName`, `Email`, `PASS`) VALUES
+(1, 'Joe', 'Taha', 'jmt5@mail.aub.edu', 'Pass@76!'),
+(2, 'Maria', 'Itani', 'mti15@mail.aub.edu', '123qwe%$'),
+(3, 'Ahmad', 'Boustany', 'ahb7@mail.aub.edu', '*&yDw23'),
+(4, 'Maya', 'Sadek', 'mts5@mail.aub.edu', 'Love@90#'),
+(5, 'Johny', 'Massoud', 'jmm22@mail.aub.edu', 'Idk?90'),
+(6, 'Rony', 'Haddad', 'rsh17@mail.aub.edu', '9Rony^dw');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `Food`
+--
+ALTER TABLE `Food`
+  ADD PRIMARY KEY (`F_id`),
+  ADD KEY `R_Id` (`R_Id`);
+
+--
+-- Indexes for table `Ingredients`
+--
+ALTER TABLE `Ingredients`
+  ADD KEY `F_Id` (`F_Id`);
+
+--
+-- Indexes for table `Restaurents`
+--
+ALTER TABLE `Restaurents`
+  ADD PRIMARY KEY (`R_Id`);
+
+--
+-- Indexes for table `Users`
+--
+ALTER TABLE `Users`
+  ADD PRIMARY KEY (`U_Id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `Restaurents`
+--
+ALTER TABLE `Restaurents`
+  MODIFY `R_Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `Food`
+--
+ALTER TABLE `Food`
+  ADD CONSTRAINT `food_ibfk_1` FOREIGN KEY (`R_Id`) REFERENCES `Restaurents` (`R_Id`);
+
+--
+-- Constraints for table `Ingredients`
+--
+ALTER TABLE `Ingredients`
+  ADD CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`F_Id`) REFERENCES `Food` (`F_id`);

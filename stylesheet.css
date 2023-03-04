@@ -1,0 +1,198 @@
+body
+{
+	font-family:sans-serif,ariel;
+	font-size:17pt;
+	color:white;
+}
+
+#center,#search 
+{
+	text-align:center;
+}
+
+thead
+{
+	font-size:20pt;
+	font-weight:bold;
+	color:rgb(189,199,7);
+}
+
+p.quote
+{
+	font-style:italic;
+	font-size:15pt;
+}
+
+div#ajax
+{
+	margin:20px;
+	text-align:center;
+}
+
+table
+{
+	background-color:white;
+	color:rgb(2,6,79);
+	border-collapse:collapse;
+	width:70%;
+}
+
+td
+{
+	border:3px solid black;
+}
+
+a,a:link
+{
+	text-decoration:none;
+	color:rgb(2,6,79);
+}
+
+span
+{
+	font-style:normal;
+	font-size:12pt;
+	font-weight:bold;
+}
+
+#login
+{
+	background-image:url("Images/food.jpg");
+}
+
+.background
+{
+	background-color:rgb(2,6,79);
+}
+
+#error
+{
+	margin:auto;
+	background-color:rgb(234,45,67);
+	width:50%;
+	border-radius:20px;
+	padding:20px;
+	margin-top:20%;
+}
+
+input
+{
+	margin:10px;
+}
+
+h1
+{
+	padding-top:20px;
+	width:50%;
+	margin:auto;
+	text-align:center;
+	font-size:35pt;
+	color:white;
+}
+
+img
+{
+	padding-top:20px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:10px;
+	width:100px;
+	height:100px;
+
+}
+
+div.restaurants
+{
+	float:left;
+	margin:auto;
+	width:70%;
+}
+
+input[type="radio"]
+{
+	padding:5px;
+}
+
+input:hover,.colors:hover
+{
+	color:rgb(234,45,67);
+}
+
+section:hover
+{
+	background-color:rgb(95,99,3);
+}
+
+div.rearrange
+{
+	float:left;
+	width:25%;
+	height:800px;	
+}
+
+#logout
+{
+	float:right;
+}
+
+fieldset
+{
+	color:rgb(234,45,67);
+	background-color:white;
+	border-radius:30px;
+	border-color:rgb(234,45,67);
+	width:50%;
+	margin:auto;
+	text-align:center;
+}
+
+.restaurantName
+{
+	font-size:20px;
+}
+
+.favorite
+{
+	color:rgb(189,199,7);
+	text-align:center;
+	border-radius:20px;
+	background-color:rgb(235,235,235);
+	margin:20px;
+	float:left;
+	width:220px;
+}
+
+section
+{
+	text-align:center;
+	border-radius:20px;
+	background-color:rgb(189,199,7);
+	margin:20px;
+	float:left;
+	width:220px;
+}
+
+.number
+{
+	color:rgb(234,45,67);
+	font-style:italic;
+	font-size:13px;
+}
+
+form
+{
+	margin-top:15%;
+}
+
+#hint
+{
+	font-size:9pt;
+	color:black;
+}
+
+#hint2
+{
+	text-align:center;
+	font-size:12px;
+	font-size:12px;
+}

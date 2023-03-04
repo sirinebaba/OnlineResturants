@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Login Page </title>
+		<link href="stylesheet.css" type="text/css" rel="stylesheet">
+		<link href="Images/login.png" type="image/png" rel="shortcut icon">
+	</head>
+	<body id="login">
+		<h1>Cafeteria</h1>
+		<form action="Confirm.php" method="post">
+			<fieldset>
+				<label>Username:<label><input type="text" value="@mail.aub.edu" name="username" id="username" pattern="^[a-z]{3}[0-9]{2}@mail.aub.edu$"><br/>
+				<label>Password:</label><input type="password" name="password" id="password" pattern="^[0-9]([a-zA-Z]|[0-9]){8}$"><br/>
+				<p id="hint" hidden> Username must contain 3 lower-case characters followed by two digits and @mail.aub.edu (AUB username)<br/>
+				Password must start with a number and contain both letters and numbers and should be 9 characters long</p>
+				<script>
+					document.getElementById("username").onchange=setTimeout(unhideHint,3000);
+					function unhideHint()
+					{
+						document.getElementById("hint").hidden=false;
+					}
+				</script>
+				<input type="submit" name="validate" value="Login"><br/>
+			</fieldset>
+		</form>
+	</body>
+</html>
